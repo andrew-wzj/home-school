@@ -45,7 +45,7 @@ Chinese UI: [screenshot](docs/images/today-zh.png).
 Needs Python 3.9 or newer. No packages to install.
 
 ```sh
-git clone <this repo> home-school && cd home-school
+git clone https://github.com/andrew-wzj/home-school.git && cd home-school
 python3 run.py            # opens http://127.0.0.1:8110/
 ```
 
