@@ -1,0 +1,15 @@
+# Secrets: your API key lives here. Never commit it.
+config.local.json
+config.local.json.tmp
+
+# Your study records, caption backups, and homework (course policy: no public solutions)
+data/
+workspace/
+
+# Local tools (yt-dlp binary)
+.bin/
+.venv/
+
+__pycache__/
+*.pyc
+.DS_Store

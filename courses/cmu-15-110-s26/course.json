@@ -1,0 +1,263 @@
+{
+  "id": "cmu-15-110-s26",
+  "code": "15-110",
+  "title": {"en": "Principles of Computing", "zh": "计算原理"},
+  "school": "Carnegie Mellon University",
+  "term": "Spring 2026",
+  "site": "https://www.cs.cmu.edu/~15110-s26/",
+  "channel": "https://www.youtube.com/@CMULearn",
+  "notes": "YouTube numbers lectures from the first recorded one, so YouTube 'Lecture 1' is course L2. L1 has no recording. Segment times were aligned by reading the caption transcripts; spot-check them.",
+
+  "modules": [
+    {
+      "id": "m1",
+      "title": {"en": "Programming basics → functions", "zh": "编程基础 → 函数"},
+      "lectures": ["L1", "L2", "L3", "L4", "L5"],
+      "question": {
+        "en": "What does defining a function do, and what does calling it do? Why write code as functions at all?",
+        "zh": "函数的“定义”和“调用”各做什么？为什么要写成函数？"
+      },
+      "answer_after": "L5"
+    }
+  ],
+
+  "lectures": [
+    {
+      "id": "L1", "n": 1, "date": "2026-01-12",
+      "title": {"en": "Course Intro & Algorithms", "zh": "课程介绍与算法"},
+      "slides": "slides/week1-1-algorithms.pdf",
+      "video": null,
+      "question": {
+        "en": "What makes a set of instructions an algorithm? Give one everyday example and say where it is ambiguous.",
+        "zh": "一组指令怎样才算算法？举一个日常例子，并指出它哪里有歧义。"
+      },
+      "segments": [
+        {
+          "id": "L1-1", "pages": "all", "start": null, "end": null, "read_minutes": 20,
+          "title": {"en": "Algorithms and abstraction (slides only)", "zh": "算法与抽象（只读讲义）"},
+          "summary": {"en": "No recording. Read the slides: what an algorithm is, why precision matters, and abstraction as hiding detail.", "zh": "无录像。读讲义：什么是算法、为什么要精确、抽象就是隐藏细节。"},
+          "concepts": ["algorithm", "abstraction"],
+          "prereqs": [],
+          "points": {
+            "en": ["An algorithm is a precise, step-by-step procedure that solves a problem.", "Abstraction: keep the parts that matter, hide the rest."],
+            "zh": ["算法是精确、按步骤解决问题的过程。", "抽象：保留要紧的部分，隐藏其余细节。"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "L2", "n": 2, "date": "2026-01-14",
+      "title": {"en": "Programming Basics", "zh": "编程基础"},
+      "slides": "slides/week1-2-programming.pdf",
+      "code": "slides/week1-2-code.py",
+      "video": {"youtube": "oPSMMckx3eY", "duration": 2715, "label": "YouTube: Lecture 1"},
+      "question": {
+        "en": "In Python, what does x = x - 1 mean, and why is it not a contradiction like it would be in math?",
+        "zh": "在 Python 里 x = x - 1 是什么意思？为什么它不像数学里那样自相矛盾？"
+      },
+      "segments": [
+        {
+          "id": "L2-1", "pages": "4–7", "start": 0, "end": 365,
+          "title": {"en": "Python and the IDE", "zh": "Python 与 IDE"},
+          "summary": {"en": "Programs are algorithms written in a language the computer understands. Thonny has an editor (saved files, long-term) and a shell/interpreter (quick tests, lost on close).", "zh": "程序是用计算机能懂的语言写下的算法。Thonny 分编辑器（存成文件，长期保留）和 shell/解释器（快速试验，关掉就没）。"},
+          "concepts": ["program vs. algorithm", "editor vs. shell"],
+          "prereqs": ["algorithm"],
+          "points": {
+            "en": ["A program is an algorithm translated into a programming language.", "Editor = saved code; shell = scratchpad that forgets."],
+            "zh": ["程序 = 翻译成编程语言的算法。", "编辑器保存代码；shell 是会忘记的草稿纸。"]
+          }
+        },
+        {
+          "id": "L2-2", "pages": "8–15", "start": 365, "end": 1365,
+          "title": {"en": "Data types and operations", "zh": "数据类型与运算"},
+          "summary": {"en": "Three core types: numbers (int, float), strings in quotes, and Booleans (True/False). + joins strings, * repeats them. == tests equality. Mixing types (\"hello\" + 5) raises TypeError.", "zh": "三种基本类型：数字（int、float）、带引号的字符串、布尔值（True/False）。字符串 + 是拼接、* 是重复。== 判断相等。混用类型（\"hello\" + 5）会报 TypeError。"},
+          "concepts": ["int vs. float", "strings and concatenation", "Booleans and comparison", "TypeError"],
+          "prereqs": [],
+          "points": {
+            "en": ["\"1\" + \"2\" is \"12\", not 3.", "= assigns; == compares.", "3.0 * 5 gives a float."],
+            "zh": ["\"1\" + \"2\" 得 \"12\"，不是 3。", "= 是赋值，== 是比较。", "3.0 * 5 结果是 float。"]
+          }
+        },
+        {
+          "id": "L2-3", "pages": "16–24", "start": 1365, "end": 2170,
+          "title": {"en": "Files, print, comments, errors", "zh": "文件、print、注释、报错"},
+          "summary": {"en": "Running a file shows nothing unless you print. print takes several values separated by commas. # and triple quotes make comments. To read an error: find the line number, the error type, then the caret. Leading whitespace matters.", "zh": "运行文件时不 print 就什么都看不到。print 可用逗号传多个值。# 和三引号写注释。读报错：先看行号，再看错误类型，再看 ^ 指的位置。行首空格有意义。"},
+          "concepts": ["print", "comments", "reading error messages"],
+          "prereqs": ["editor vs. shell"],
+          "points": {
+            "en": ["Scripts only show what you print.", "Error = line number + type + caret.", "Indentation at the start of a line is not cosmetic."],
+            "zh": ["脚本只显示你 print 的内容。", "报错 = 行号 + 类型 + ^ 位置。", "行首缩进不是装饰。"]
+          }
+        },
+        {
+          "id": "L2-4", "pages": "25–32", "start": 2170, "end": 2715,
+          "title": {"en": "Variables and tracing", "zh": "变量与顺序执行"},
+          "summary": {"en": "A variable is a named box holding one value. = means assign: evaluate the right side, store it on the left. x = x - 1 reads the old x, then replaces it. Using a variable before creating it is a NameError. Trace by drawing boxes.", "zh": "变量是有名字、装一个值的盒子。= 是赋值：先算右边，再存进左边。x = x - 1 先读旧的 x，再替换。没创建就用变量会报 NameError。画盒子来追踪。"},
+          "concepts": ["assignment", "variable tracing"],
+          "prereqs": ["Booleans and comparison"],
+          "points": {
+            "en": ["Right side first, then store left.", "A variable holds one value at a time.", "Create before use, or NameError."],
+            "zh": ["先算右边，再存左边。", "变量一次只装一个值。", "先创建再使用，否则 NameError。"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "L3", "n": 3, "date": "2026-01-16",
+      "title": {"en": "Data Representation", "zh": "数据表示"},
+      "slides": "slides/week1-3-data-representation.pdf",
+      "video": {"youtube": "0nmhvgc5XOI", "duration": 2591, "label": "YouTube: Lecture 2"},
+      "question": {
+        "en": "The same 24 bits could be a number, three letters, or a color. What decides which one they are?",
+        "zh": "同样 24 个比特，可以是数字、三个字母或一种颜色。由什么决定它到底是哪个？"
+      },
+      "segments": [
+        {
+          "id": "L3-1", "pages": "4–20", "start": 0, "end": 1587,
+          "title": {"en": "Number systems and binary conversion", "zh": "进制与二进制转换"},
+          "summary": {"en": "Coins (quarters, dimes, nickels, pennies) as a warm-up number system. Decimal is powers of 10; binary is powers of 2. Binary → decimal: add the powers where there is a 1. Decimal → binary: from 128 down, subtract the largest power that fits. Always write 8 bits.", "zh": "先用硬币（25/10/5/1 分）当热身进制。十进制是 10 的幂，二进制是 2 的幂。二进制→十进制：把是 1 的位上的幂加起来。十进制→二进制：从 128 往下，减去能放下的最大幂。永远写满 8 位。"},
+          "concepts": ["binary → decimal", "decimal → binary", "bits and bytes"],
+          "prereqs": [],
+          "points": {
+            "en": ["Write the powers-of-2 table first: 128 64 32 16 8 4 2 1.", "8 bits = 1 byte, values 0–255.", "Show the work; the process is graded, not just the answer."],
+            "zh": ["先写 2 的幂表：128 64 32 16 8 4 2 1。", "8 位 = 1 字节，取值 0–255。", "写出过程；评分看过程，不只看答案。"]
+          }
+        },
+        {
+          "id": "L3-2", "pages": "21–33", "start": 1587, "end": 2591,
+          "title": {"en": "Representing dates, colors, and text", "zh": "用二进制表示日期、颜色和文字"},
+          "summary": {"en": "Layers of abstraction: dates as seconds since 1970; images as pixels, each pixel an RGB triple of bytes; text through the ASCII table (0–127) and Unicode for everything else. Bits mean nothing without knowing which interpretation applies.", "zh": "抽象层层叠加：日期 = 1970 年以来的秒数；图片 = 像素，每个像素是 RGB 三个字节；文字靠 ASCII 表（0–127），其余字符用 Unicode。不知道按哪种方式解读，比特本身没有意义。"},
+          "concepts": ["RGB colors", "ASCII and Unicode", "levels of abstraction"],
+          "prereqs": ["decimal → binary"],
+          "points": {
+            "en": ["RGB = 3 bytes, each 0–255.", "ASCII maps characters to numbers by agreement.", "Same bits, different meaning: context decides."],
+            "zh": ["RGB = 3 个字节，各 0–255。", "ASCII 是约定好的字符↔数字表。", "同样的比特，含义由上下文决定。"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "L4", "n": 4, "date": "2026-01-21",
+      "title": {"en": "Function Calls", "zh": "函数调用"},
+      "slides": "slides/week2-2-function-calls.pdf",
+      "code": "slides/week2-2-code.py",
+      "video": {"youtube": "vh3oVBcWG0A", "duration": 2499, "label": "YouTube: Lecture 3"},
+      "segments": [
+        {
+          "id": "L4-1", "pages": "4–14", "start": 0, "end": 1161,
+          "title": {"en": "Calls, arguments, return values", "zh": "调用、参数、返回值"},
+          "summary": {"en": "A function is a recipe: define once, call many times. Call = name(arguments). Built-ins: abs, pow, round, input, int/float/str/bool, type. Arguments go in, exactly one return value comes out. To see the return value, store it in a variable. Nested calls run innermost first.", "zh": "函数像菜谱：定义一次，调用多次。调用 = 名字(参数)。内置函数：abs、pow、round、input、int/float/str/bool、type。参数进去，出来恰好一个返回值。想看返回值就存进变量。嵌套调用从最里层开始算。"},
+          "concepts": ["function call syntax", "arguments", "return value", "type conversion"],
+          "prereqs": ["assignment", "int vs. float"],
+          "points": {
+            "en": ["Count the commas to count the arguments.", "Argument order matters: pow(2, 3) ≠ pow(3, 2).", "input() always returns a string."],
+            "zh": ["数逗号就知道几个参数。", "参数顺序有意义：pow(2, 3) ≠ pow(3, 2)。", "input() 返回的永远是字符串。"]
+          }
+        },
+        {
+          "id": "L4-2", "pages": "16–21", "start": 1161, "end": 1790,
+          "title": {"en": "Side effects, print, and None", "zh": "副作用、print 与 None"},
+          "summary": {"en": "Anything a function does besides returning is a side effect. What print shows on screen is a side effect; print returns None. So print(2) + 2 is a TypeError, while abs(2) + 2 is 4.", "zh": "函数除返回值以外做的事都是副作用。print 显示在屏幕上的是副作用；print 返回 None。所以 print(2) + 2 报 TypeError，而 abs(2) + 2 是 4。"},
+          "concepts": ["return vs. print", "side effects", "None"],
+          "prereqs": ["return value"],
+          "points": {
+            "en": ["Shown on screen ≠ returned.", "print returns None.", "One return value; zero or more side effects."],
+            "zh": ["显示出来 ≠ 返回了。", "print 返回 None。", "返回值只有一个；副作用可以有零个或多个。"]
+          }
+        },
+        {
+          "id": "L4-3", "pages": "22–33", "start": 1790, "end": 2499,
+          "title": {"en": "Libraries: math, random, graphics", "zh": "库：math、random、图形"},
+          "summary": {"en": "Libraries are collections of functions you import. math.ceil, math.log, math.pi; random.randint(a, b) is inclusive on both ends; random.random() gives 0–1. tkinter starter code: (0, 0) is the top-left, y grows downward, and shapes drawn later sit on top.", "zh": "库是需要 import 的函数集合。math.ceil、math.log、math.pi；random.randint(a, b) 两端都包含；random.random() 给 0–1。tkinter 起始代码：(0, 0) 在左上角，y 向下增大，后画的形状盖在上面。"},
+          "concepts": ["import and libraries", "canvas coordinates"],
+          "prereqs": ["function call syntax"],
+          "points": {
+            "en": ["Imports typed in the shell are forgotten; put them in the file.", "randint includes both ends.", "Canvas y-axis points down."],
+            "zh": ["shell 里的 import 会丢；写在文件里。", "randint 包含两端。", "画布 y 轴朝下。"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "L5", "n": 5, "date": "2026-01-23",
+      "title": {"en": "Function Definitions", "zh": "函数定义"},
+      "slides": "slides/week2-3-function-definitions.pdf",
+      "code": "slides/week2-3-code.py",
+      "video": {"youtube": "_YZfluWOc7s", "duration": 2767, "label": "YouTube: Lecture 4"},
+      "segments": [
+        {
+          "id": "L5-1", "pages": "5–10", "start": 0, "end": 1535,
+          "title": {"en": "def, parameters, return", "zh": "def、参数与 return"},
+          "summary": {"en": "def name(params): plus an indented body defines a function. Defining runs nothing; you must call it. Parameters are abstract placeholders, arguments are the concrete values. return sends one value back; with no return, Python returns None. Control flow jumps into a function when it is called.", "zh": "def 名字(参数): 加缩进的函数体就是定义。定义不会执行任何东西，必须调用。参数是抽象占位，实参是具体值。return 送回一个值；没写 return 就返回 None。调用时控制流会跳进函数。"},
+          "concepts": ["define vs. call", "parameters", "return vs. print"],
+          "prereqs": ["return value", "None"],
+          "points": {
+            "en": ["Defining is not running.", "Parameter = placeholder; argument = value passed in.", "No return statement means return None."],
+            "zh": ["定义不等于运行。", "形参是占位，实参是传入的值。", "没有 return 等于 return None。"]
+          }
+        },
+        {
+          "id": "L5-2", "pages": "11–17", "start": 1535, "end": 1895,
+          "title": {"en": "Local and global scope", "zh": "局部与全局作用域"},
+          "summary": {"en": "Variables created inside a function, including its parameters, are local and vanish afterwards. Variables at the top level are global. A function looks locally first, then globally; the outside cannot see in. It works like a one-way mirror.", "zh": "函数内部创建的变量（包括参数）是局部的，函数结束就消失。顶层的变量是全局的。函数先找局部，再找全局；外面看不到里面，像单向镜。"},
+          "concepts": ["local vs. global scope"],
+          "prereqs": ["define vs. call"],
+          "points": {
+            "en": ["Parameters are local variables.", "Inside looks out; outside cannot look in.", "Same name in two functions = two different variables."],
+            "zh": ["参数也是局部变量。", "里面能看外面，外面看不到里面。", "两个函数里同名 = 两个不同变量。"]
+          }
+        },
+        {
+          "id": "L5-3", "pages": "18–32", "start": 1895, "end": 2767,
+          "title": {"en": "Tracing function calls", "zh": "函数调用追踪"},
+          "summary": {"en": "Trace like Python does: each call leaves a bookmark where it waits; the callee runs with its own local variables and returns the value to whoever called it. Worked examples: add_tip, outer/inner, pay_for_meal. A traceback lists the chain of calls.", "zh": "像 Python 一样追踪：每次调用都在原处留个书签等待；被调用的函数用自己的局部变量运行，再把值返回给调用它的地方。例题：add_tip、outer/inner、pay_for_meal。traceback 列出调用链。"},
+          "concepts": ["call tracing"],
+          "prereqs": ["local vs. global scope", "return vs. print"],
+          "points": {
+            "en": ["Return goes to the most recent caller.", "Use two colors or boxes per call frame.", "Read a traceback top to bottom as the call chain."],
+            "zh": ["返回给最近一次调用的地方。", "每层调用用不同颜色或方框。", "traceback 从上往下读就是调用链。"]
+          }
+        }
+      ]
+    }
+  ],
+
+  "assignments": [
+    {
+      "id": "check1",
+      "name": "Check1",
+      "title": {"en": "Written check-in", "zh": "书面小作业"},
+      "module": "m1",
+      "kind": "written",
+      "lectures": ["L1", "L2", "L3"],
+      "due_after": {"lecture": "L3", "days": 4},
+      "materials": [
+        {"label": "check1.pdf", "url": "hw/check1.pdf"}
+      ],
+      "concepts": [
+        {"en": "algorithms & abstraction", "zh": "算法与抽象"},
+        {"en": "binary ↔ decimal", "zh": "二进制 ↔ 十进制"},
+        {"en": "RGB and ASCII", "zh": "RGB 与 ASCII"}
+      ]
+    },
+    {
+      "id": "hw1",
+      "name": "Hw1",
+      "title": {"en": "Programming Skills", "zh": "编程基础"},
+      "module": "m1",
+      "kind": "programming",
+      "lectures": ["L1", "L2", "L3", "L4", "L5"],
+      "due_after": {"lecture": "L5", "days": 3},
+      "materials": [
+        {"label": "hw1-prog.pdf", "url": "hw/hw1-prog.pdf"},
+        {"label": "hw1.pdf", "url": "hw/hw1.pdf"},
+        {"label": "hw1.py", "url": "hw/hw1.py", "starter": true}
+      ],
+      "concepts": [
+        {"en": "define vs. call", "zh": "定义 vs 调用"},
+        {"en": "return vs. print", "zh": "return vs print"},
+        {"en": "parameters", "zh": "参数"}
+      ]
+    }
+  ]
+}
