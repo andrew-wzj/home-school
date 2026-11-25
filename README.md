@@ -1,5 +1,7 @@
 # Home School · 在家学
 
+[中文说明](README.zh-CN.md)
+
 A semi-supervised self-study app for people who want a real university course without paying for a degree.
 It runs on your own computer. An AI "teacher" sets the pace, reminds you, checks what you
 understood, and keeps a record of where you got stuck. You bring your own Claude or OpenAI key.
@@ -23,6 +25,7 @@ Module 1 (L1–L5, Check1, Hw1) is filled in.
 |---|---|
 | ![Lesson](docs/images/lesson.png) | ![Assignment](docs/images/assignment.png) |
 
+The video area is a YouTube embed that plays only the current segment (blank in this headless screenshot).
 Chinese UI: [screenshot](docs/images/today-zh.png).
 
 ## Documentation
